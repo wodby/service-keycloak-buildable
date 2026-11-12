@@ -1,0 +1,30 @@
+name: keycloak-buildable
+type: service
+icon: keycloak
+title: Keycloak (buildable)
+from: keycloak
+fromVersionConstraint: "^2.0.0"
+fromVersion: "2.1.0"
+guidance: GUIDANCE.md
+
+labels:
+- keycloak
+- identity
+- authentication
+
+# The Keycloak versions of the keycloak service: the build starts from the same
+# Keycloak image and adds the app repository's providers and themes.
+build:
+  connect: true
+  dockerfile: Dockerfile
+  boilerplates:
+  - name: vanilla
+    title: Vanilla Keycloak
+    repo: https://github.com/wodby/keycloak-boilerplate
+    branch: main
+
+workloads:
+- name: main
+  containers:
+  - name: keycloak
+    build: true
