@@ -4,7 +4,7 @@ icon: keycloak
 title: Keycloak (buildable)
 from: keycloak
 fromVersionConstraint: "^2.0.0"
-fromVersion: "2.1.0"
+fromVersion: "2.1.1"
 guidance: GUIDANCE.md
 
 labels:
